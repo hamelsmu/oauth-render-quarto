@@ -27,7 +27,7 @@ services:
         value: ":10000"        # We hardocde this to a port we will not use since we are going to use HTTPS instead.
 ```
 
-This file is called a Blueprint, and you can read about the [Blueprint specification here](https://render.com/docs/blueprint-spec).
+This file is called a Blueprint, which has many more options [you can read about here](https://render.com/docs/blueprint-spec).
 
 ### The Dockerfile
 
