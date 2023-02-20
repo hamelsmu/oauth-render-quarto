@@ -1,8 +1,17 @@
 # Create A Private Static Site With OAuth For Free With Render
 
-This blueprint helps you deploy a private [Quarto](https://quarto.org/) site behind OAuth, for free, on [Render](https://render.com/). This can be any static site and is not specific to Quarto.
+This blueprint helps you deploy a private [Quarto](https://quarto.org/) site behind OAuth, **for free**, on [Render](https://render.com/). This can be any static site and is not specific to Quarto.
 
 Instructions and background are [here](https://github.com/hamelsmu/oauth-tutorial/blob/main/simple/README.md#render).
+
+## Usage
+
+1. Follow [these instructions](https://github.com/hamelsmu/oauth-tutorial/blob/main/simple/README.md#render) to set things up.
+1. Update/author your content.  
+2. Add/delete emails from [email_list.txt](./email_list.txt) based upon who is allowed to view your site.  The email(s) must correpond to a person's primary email on Github (users will sign in on GitHub to identify themselves).
+2. Run `quarto render` to update your site, and **check-in all your content to GitHub.**
+
+Your site will automatically render.
 
 ## How does this work?
 
@@ -33,7 +42,7 @@ This file is called a Blueprint, which has many more options [you can read about
 
 The [Dockerfile](./Dockerfile) copies the files for the static site, located in [_site/](./_site/), as well as the email whitelist [email_list.txt](./email_list.txt).  
 
-The commands for this Dockerfile are explained [in this tutorial](https://github.com/hamelsmu/oauth-tutorial/tree/main/local).  One key difference is that we are [passing environment variables instead of flags](https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview#environment-variables) for certain options.
+The commands for this Dockerfile are explained [in this tutorial](https://github.com/hamelsmu/oauth-tutorial/tree/main/local).  One key difference is that we are [passing environment variables instead of flags](https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview#environment-variables) for certain options. These environment variables are set in `render.yaml`, as discussed above.
 
 ```Dockerfile
 FROM quay.io/oauth2-proxy/oauth2-proxy
@@ -53,6 +62,8 @@ ENTRYPOINT ["/bin/oauth2-proxy", \
 
 _You don't have to deploy things this way.  Instead, you can instead [mount a disk](https://render.com/docs/disks) to this Docker container and [transfer](https://render.com/docs/disks#transferring-files) files to your site.  This is more efficient since only your static files will normally change, not the software running the proxy.   However, I want to keep things as simple as possible for this tutorial, so I'll leave that as an exercise to the reader (you may also have to pay a minimal amount for a disk).  If you do this, you will also want to [turn `Auto Sync` off](https://render.com/docs/infrastructure-as-code#:~:text=Turning%20Off%20Automatic%20Sync,and%20apply%20the%20displayed%20changes.)._  
 
+## Further Reading
 
+See [The tutorial](https://github.com/hamelsmu/oauth-tutorial).
 
 
