@@ -15,7 +15,9 @@ Your site will automatically render.
 
 ## How does this work?
 
-### The `render.yaml` Blueprint
+There are two components that do most of the work here:
+
+### 1. The `render.yaml` Blueprint
 
 The [render.yaml](./render.yaml) file drives all the settings and saves you from having to click around in the Render UI. Here is an explanation of this file:
 
@@ -38,7 +40,7 @@ services:
 
 This file is called a Blueprint, which has many more options [you can read about here](https://render.com/docs/blueprint-spec).  Render automatically detects the port listening for `http` traffic and routes traffic to it accordingly. Render handles the incoming `https` traffic upstream with its own load balancers, [as described here](https://community.render.com/t/how-ports-and-https-are-handled-for-docker-deploy/363/2).
 
-### The Dockerfile
+### 2. The Dockerfile
 
 The [Dockerfile](./Dockerfile) copies the files for the static site, located in [_site/](./_site/), as well as the email whitelist [email_list.txt](./email_list.txt).  
 
