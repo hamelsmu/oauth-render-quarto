@@ -62,7 +62,7 @@ ENTRYPOINT ["/bin/oauth2-proxy", \
             "--skip-provider-button=true"]
 ```
 
-_You don't have to deploy things this way.  Instead, you can instead [mount a disk](https://render.com/docs/disks) to this Docker container and [transfer](https://render.com/docs/disks#transferring-files) files to your site.  This is more efficient since only your static files will normally change, not the software running the proxy.   However, I want to keep things as simple as possible for this tutorial, so I'll leave that as an exercise to the reader (you may also have to pay a minimal amount for a disk).  If you do this, you will also want to [turn `Auto Sync` off](https://render.com/docs/infrastructure-as-code#:~:text=Turning%20Off%20Automatic%20Sync,and%20apply%20the%20displayed%20changes.)._  
+_You don't have to deploy things this way.  Instead, you can [mount a disk](https://render.com/docs/disks) to this Docker container and [transfer](https://render.com/docs/disks#transferring-files) files to your site.  This is more efficient since only your static files will normally change, not the software running the proxy.   However, I want to keep things as simple as possible for this tutorial, so I'll leave that as an exercise to the reader (you may also have to pay a minimal amount for a disk).  If you do this, you will also want to [turn `Auto Sync` off](https://render.com/docs/infrastructure-as-code#:~:text=Turning%20Off%20Automatic%20Sync,and%20apply%20the%20displayed%20changes.)._  
 
 ## Further Reading
 
