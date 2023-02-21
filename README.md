@@ -8,8 +8,8 @@ Instructions and background are [here](https://github.com/hamelsmu/oauth-tutoria
 
 1. Follow [these instructions](https://github.com/hamelsmu/oauth-tutorial/blob/main/simple/README.md#render) to set things up.
 1. Update/author your content.  
-2. Add/delete emails from [email_list.txt](./email_list.txt) based upon who is allowed to view your site.  The email(s) must correpond to a person's primary email on Github (users will sign in on GitHub to identify themselves).
-2. Run `quarto render` to update your site, and **check-in all your content to GitHub.**
+2. Add/delete emails from [email_list.txt](./email_list.txt) based on who is allowed to view your site.  The email(s) must correspond to a person's primary email on Github (users will sign in on GitHub to identify themselves).
+3. Run `quarto render` to update your site, and **check-in all your content to GitHub.**
 
 Your site will automatically render.
 
