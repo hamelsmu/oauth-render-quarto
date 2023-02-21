@@ -9,5 +9,4 @@ ENTRYPOINT ["/bin/oauth2-proxy", \
             "--authenticated-emails-file", "/site_config/email_list.txt", \
             "--scope=user:email", \
             "--cookie-expire=0h0m30s", \
-            "--session-cookie-minimal=true", \
             "--skip-provider-button=true"]
