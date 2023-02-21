@@ -33,10 +33,10 @@ services:
       - key: OAUTH2_PROXY_COOKIE_SECRET
         generateValue: true    # Generates a random string for you
       - key: OAUTH2_PROXY_HTTP_ADDRESS
-        value: ":10000"        # We hardocde this to a port we will not use since we are going to use HTTPS instead.
+        value: ":10000" # Render will automatically detect this port and send traffic to it.
 ```
 
-This file is called a Blueprint, which has many more options [you can read about here](https://render.com/docs/blueprint-spec).
+This file is called a Blueprint, which has many more options [you can read about here](https://render.com/docs/blueprint-spec).  Render automatically detects the port listening for `http` traffic and routes traffic to it accordingly. Render handles the incoming `https` traffic upstream with its own load balancers, [as described here](https://community.render.com/t/how-ports-and-https-are-handled-for-docker-deploy/363/2).
 
 ### The Dockerfile
 
